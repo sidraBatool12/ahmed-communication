@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hero Section</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    /*------------= HERO SECTION -=-------------=*/
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: large;
+    }
+
+    .hero-section {
+      background-image: url(imgs/Vector.png), url(imgs/vector1.png);
+      background-position: left, right;
+      background-repeat: no-repeat, no-repeat;
+      background-size: contain;
+      padding-bottom: 100px;
+    }
+
+    .navbar-custom {
+      background-color: transparent;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      padding: 18px 0 20px;
+      margin: 0;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      margin: 0 9px;
+      color: #0d457a;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: #051f36 !important;
+    }
+
+    .dropdown-menu {
+      background-color: #0b4784;
+      border: white;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: white;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #023061;
+      color: white;
+    }
+
+    .hero-text h2 {
+      font-size: 50px;
+      font-weight: 699;
+      line-height: 65.7px;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, #3b88be, #023a67);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero {
+      margin-top: 60px;
+    }
+
+    .hero-text p {
+      font-size: 1.04rem;
+      color: #333;
+      letter-spacing: 1.3px;
+      margin-top: 1.2rem;
+      line-height: 29px;
+    }
+
+    .hero-img img {
+      width: 100%;
+      margin-top: 10%;
+    }
+
+    .btn-readmore {
+      background: linear-gradient(90deg, #0a4f93, rgb(1, 2, 44));
+      color: white;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 25px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-readmore:hover {
+      background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+      color: white;
+    }
+
+    .stats-box .card:hover {
+      color: white;
+      background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+      -webkit-text-fill-color: white;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .hero-img .img {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1226px) {
+      .hero-section {
+        background-image: none;
+      }
+
+      .nav-link {
+        color: #0d457a;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section {
+        padding-bottom: 50px;
+      }
+
+      .hero-text h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+        text-align: justify;
+      }
+
+      .btn-readmore {
+        display: block;
+        margin: 20px auto 0 auto;
+      }
+
+      .nav-link.text-white {
+        color: #0d457a !important;
+      }
+
+      .hero-img {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+
+
+    /* --------SRVICES-BOX=-------- */
+
+    .services-box {
+      background-color: #f8f9fa;
+    }
+
+    .circle-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .circle-icon:hover {
+      background-color: rgb(54, 110, 188);
+    }
+
+    .circle-icon img {
+      max-width: 100%;
+      transition: 0.3s;
+    }
+
+    .icon-label {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .section-heading {
+      background: linear-gradient(90deg, #3797d6, #00113E);
+      color: white;
+      padding: 8px 20px;
+      font-size: 25px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      margin: 30px 0 30px;
+    }
+
+    .service-card {
+      /* background-color: white; */
+      /* padding: 20px; */
+      border-radius: 12px;
+
+      text-align: center;
+    }
+
+    .service-card img {
+      height: 150px;
+      border-radius: 15px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    /* TRENDING PAKAGES */
+
+    .category-box {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #000;
+      background-color: #fff;
+      border-radius: 16px;
+      height: 160px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+  
+    .category-box i {
+      font-size: 36px;
+      margin-bottom: 12px;
+      color: #002D72; 
+      transition: color 0.3s ease;
+    }
+  
+    .category-box:hover {
+      background-color:#002D72;
+      color: #fff;
+      transform: translateY(-4px);
+    }
+  
+    .category-box:hover i {
+      color: #fff;
+    }
+  
+    .section-space {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .btn{
+        background-color: #093f91;
+        color: white;
+    }
+    .Packages{
+        color: white;
+        background: linear-gradient(90deg, #3797d6, #00113E);
+        border-radius: 7px;
+        padding: 6px;
+    }
+    .data{
+        background: linear-gradient(90deg, #0A5181, #00113E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+          <!-- LOGO -->
+          <a class="navbar-brand text-white" href="#">
+            <img src="imgs/hussain 2.png" alt="Logo" style="height: 40px;">
+          </a>
+          <!-- TOGGLER -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <!-- NAVLINKS -->
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="Index.html">Home</a></li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About Us</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="aboutpage.html">About Us</a></li>
+                  <li><a class="dropdown-item" href="Services.html">Our Services</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item"><a class="nav-link" href="Stories.html">Stories</a></li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Carrier</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Carrier.html">Carrier</a></li>
+                  <li><a class="dropdown-item" href="Jobs.html">Jobs</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item"><a class="nav-link text-white" href="Insights.html">Insights</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="Blogs.html">Blogs</a></li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Support</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Contact.html">Contact Us</a></li>
+                  <li><a class="dropdown-item" href="Franchises.html">Franchises</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- HERO SECTION -->
+      <section>
+        <div class="container">
+          <div class="row align-items-center hero flex-column-reverse flex-lg-row">
+            <!-- HERO TEXT -->
+            <div class="col-lg-7 hero-text">
+              <h2>Our Services by Ahmed <br> Communication</h2>
+              <p>Ahmed Communications offers FM and radio advertising, YouTube marketing, cable network promotions, voice-over production, digital media campaigns, and customized media planning.</p>
+              <button class="btn-readmore">Read More</button>
+            </div>
+
+            <!-- HERO IMAGE -->
+            <div class="col-lg-5 hero-img">
+              <img src="imgs/service.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!-- SERVICES BOX -->
+  <div class="services-box">
+    <div class="container  py-5">
+      <!-- Top Icons Section -->
+      <div class="row justify-content-center text-center g-4">
+        <div class="col-6 col-sm-4 col-md-2 d-flex flex-column align-items-center">
+          <div class="circle-icon">
+            <img src="imgs/SCO CLOUD.png" alt="SCO Cloud">
+          </div>
+          <div class="icon-label">SCO Cloud</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex flex-column align-items-center">
+          <div class="circle-icon">
+            <img src="imgs/scom 4 g.png" alt="SCOM 4G">
+          </div>
+          <div class="icon-label">SCOM 4G</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex flex-column align-items-center">
+          <div class="circle-icon">
+            <img src="imgs/online pay.png" alt="Online Pay">
+          </div>
+          <div class="icon-label">Online Pay</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex flex-column align-items-center">
+          <div class="circle-icon">
+            <img src="imgs/sfiber.png" alt="SFiber Internet">
+          </div>
+          <div class="icon-label">SFiber Internet</div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 d-flex flex-column align-items-center">
+          <div class="circle-icon">
+            <img src="imgs/app.png" alt="Mobile App">
+          </div>
+          <div class="icon-label">Mobile App</div>
+        </div>
+      </div>
+    
+      <!-- Our Services Heading -->
+      <div class="section-heading mt-5">
+        Our Services
+      </div>
+    
+      <!-- Service Grid -->
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/phone.png" alt="Phone">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/snet.png" alt="SNet">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/ldi.png" alt="LDI">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/fiber.png" alt="Fiber">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/spaisa.png" alt="S-Paisa">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/4g.png" alt="4G">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/will.png" alt="WLL">
+          </div>
+        </div>
+        <div class="col">
+          <div class="service-card">
+            <img src="imgs/dxx.png" alt="DXX">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <div class="container py-5">
+    <h2 class="text-center  mb-5 Packages">Trending Packages</h2>
+  
+    <!-- ✅ TOP: Category Icons -->
+    <div class="row justify-content-center mb-5 text-center">
+      <div class="col-6 col-sm-4 col-md-2 mb-3">
+        <div class="category-box" data-slide-to="0">
+          <i class="bi bi-telephone-fill"></i>
+          <div>Call & SMS</div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2 mb-3">
+        <div class="category-box" data-slide-to="1">
+          <i class="bi bi-wifi"></i>
+          <div>Mobile Data</div>
+        </div>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2 mb-3">
+        <div class="category-box" data-slide-to="2">
+          <i class="bi bi-credit-card-2-back-fill"></i>
+          <div>Super Card</div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- ✅ BOTTOM: Offer Carousel -->
+    <div id="offersCarousel" class="carousel slide section-space" data-bs-ride="false">
+      <div class="carousel-inner">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row align-items-center g-4">
+            <div class="col-md-6 text-center">
+              <img src="imgs/Daily Call Plus.png" class="img-fluid rounded" alt="Call Offer">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h6 class="text-muted">Weekly</h6>
+              <h4 class="fw-bold data">WEEKLY CALL PLUS</h4>
+              <p>Let your words take flight! Embrace the freedom and fluidity of spoken 
+                  communication with our exceptional voice after, because sometimes, words
+                  are best spoken.</p>
+                  <p >Load</p>
+              <p class="data"><strong>Rs.115</strong></p>
+              <button class="btn ">View Details</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row align-items-center g-4">
+            <div class="col-md-6 text-center">
+              <img src="imgs/Daily 500.png" class="img-fluid rounded" alt="Data Blast">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h6 class="text-muted">Weekly</h6>
+              <h4 class="fw-bold data">WEEKLY DATA BLAST</h4>
+              <p>unlock limitless possibilities with our high speed data packages. Stay connected, informed, and entertained as uou browse the internet as well as Dive into the world of social connectivity with our exclusive social data packages</p>
+              <p >Load</p>
+              <p class="data"><strong>Rs.250</strong></p>
+              <button class="btn ">View Details</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row align-items-center g-4">
+            <div class="col-md-6 text-center">
+              <img src="imgs/Monthly Data Max.png" class="img-fluid rounded" alt="Super Card">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h6 class="text-muted">Monthly</h6>
+              <h4 class="fw-bold data">SUPER CARD MAX</h4>
+              <p>Experience the ultimate digital convenience with our all-in-one packages. Combining the power of voice, text, and data, these packages offer a comprehensive solution for all your communications needs.</p>
+              <p >Load</p>
+              <p class="data"><strong>Rs.500</strong></p>
+              <button class="btn ">View Details</button>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const boxes = document.querySelectorAll(".category-box");
+    const carousel = document.querySelector("#offersCarousel");
+    const bsCarousel = new bootstrap.Carousel(carousel);
+  
+    boxes.forEach(box => {
+      box.addEventListener("click", () => {
+        const index = box.getAttribute("data-slide-to");
+        bsCarousel.to(index);
+      });
+    });
+  </script>
+  
+<!-- FOOTER -->
+
+<footer style="background: linear-gradient(90deg, #0A5181, #00113E);" class="text-white py-5">
+  <div class="container">
+      <div class="row text-start">
+          <!-- Logo Section -->
+          <div class="col-12 col-md-3 mb-4 text-center text-md-start">
+              <img src="imgs/footer 1.png" alt="Ahmed Communications Logo" class="mb-2" style="width: 123px;">
+          </div>
+
+          <!-- Company -->
+          <div class="col-6 col-md-2 mb-4">
+              <h6 class="text-uppercase fw-bold fs-6">Company</h6>
+              <ul class="list-unstyled small">
+                  <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Stories</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Carrier</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Insights</a></li>
+              </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="col-6 col-md-2 mb-4">
+              <h6 class="text-uppercase fw-bold fs-6">Our Services</h6>
+              <ul class="list-unstyled small">
+                  <li><a href="#" class="text-white text-decoration-none">SPaisa</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">SCOM</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Sphone</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">SNet</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">SCO WLL</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">LDI</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">DPLC & Colocator</a></li>
+              </ul>
+          </div>
+
+          <!-- Help -->
+          <div class="col-6 col-md-2 mb-4">
+              <h6 class="text-uppercase fw-bold fs-6">Help</h6>
+              <ul class="list-unstyled small">
+                  <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                  <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+              </ul>
+          </div>
+
+          <!-- Contacts -->
+          <div class="col-12 col-md-3">
+              <h6 class="text-uppercase fw-bold fs-6 ms-2">Contacts</h6>
+              <ul class="list-unstyled small">
+                  <li><i class="bi bi-telephone"></i>+92 5811 451999, 458544</li>
+                  <li><i class="bi bi-printer"></i>+92 5811 450999</li>
+                  <li><i class="bi bi-envelope"></i>ahmadcommunicationpakistan@gmail.com</li>
+                  <li><i class="bi bi-globe"></i>www.ahmadcommunication.com.pk</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

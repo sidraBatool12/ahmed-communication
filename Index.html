@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hero Section</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: large;
+        }
+
+        /*--------------- HERO SECTION ------------------*/
+        .hero-section {
+            background-image: url(imgs/Vector.png), url(imgs/vector1.png);
+            background-position: left, right;
+            background-repeat: no-repeat, no-repeat;
+            background-size: contain;
+            padding-bottom: 40px;
+        }
+
+        .navbar-custom {
+            background-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 18px 0;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 9px;
+            color: #0d457a;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #051f36 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #0b4784;
+            border: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: white;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #023061;
+            color: white;
+        }
+
+        .hero-text h2 {
+            font-weight: 699;
+            line-height: 1.2;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #3b88be, #023a67);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-top: 30px;
+            font-size: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h2 {
+                font-size: 34px;
+            }
+        }
+
+        .hero-text p {
+            font-size: 1.04rem;
+            color: #333;
+            letter-spacing: 1.3px;
+            margin-top: 1.2rem;
+            line-height: 27px;
+        }
+
+        .btn-readmore {
+            background: linear-gradient(90deg, #0a4f93, rgb(1, 2, 44));
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 25px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-readmore:hover {
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            color: white;
+        }
+
+        .stats-box {
+            padding: 75px 0px;
+        }
+
+        .stats-box .cardS {
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: linear-gradient(90deg, #7490d8, #03233d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .stats-box .card:hover {
+            color: white;
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            -webkit-text-fill-color: white;
+        }
+
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1226px) {
+            .hero-section {
+                background-image: none;
+            }
+
+            .nav-link {
+                color: #0d457a !important;
+            }
+
+            .navbar-nav .nav-link.text-white {
+                color: #0d457a !important;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*========================= AHMED COMMUNICATIO-======================== */
+        .Ahmed {
+            background-color: rgb(246, 246, 246);
+        }
+
+        .about-section {
+            padding: 40px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #72b4e4, #042d4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-box {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #3b88be, #023258);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-title-2 {
+            background: linear-gradient(90deg, #3b88be, #023258);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            
+           
+        }
+
+
+        .about-content {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .about-img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .btn-read-more {
+            background: linear-gradient(90deg, #0A5181, #00113E);
+            color: white;
+            padding: 8px 20px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .btn-read-more:hover {
+            color: white;
+        }
+
+        .btn-read-more-2 {
+            background: linear-gradient(90deg, #0A5181, #00113E);
+            color: white;
+            padding: 8px 20px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+
+        /* -------------------BOARD OF DIRECTORS------------------------- */
+        .carousel-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 15px;
+        }
+
+        .carousel-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card1 {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            min-width: 280px;
+            max-width: 280px;
+            margin-right: 1rem;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            height: 180px;
+            background-color: #ddd;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .card-body {
+            padding: 7px;
+        }
+
+        .btn-custom {
+            background: linear-gradient(to right, #138DBD, #1B2F5C);
+            color: white;
+            font-size: 14px;
+            border: none;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #138DBD, #1B2F5C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* -----------OUR VISION---------------- */
+        .vision-section {
+            padding: 40px 40px;
+            background-color: #f9f9f9;
+        }
+
+        .vision-section h2 {
+            background: linear-gradient(to right, #37a8d4, #0f214a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .vision-section p {
+            color: #333;
+            font-size: 15px;
+        }
+
+        .vision-card img {
+            width: 110%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* ---------FEEDBACK-------- */
+        .feedback {
+            background-color: rgb(238, 236, 236);
+            padding: 20px;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .star.checked {
+            color: #004F7A;
+        }
+
+        .rounded {
+            background-color: rgb(241, 241, 241);
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .give-feedback {
+            background-color: rgb(241, 241, 241);
+            padding: 35px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-box {
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+
+        .heading {
+            background: linear-gradient(90deg, #399ada, #00113E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 20px;
+            font-size: 35px
+        }
+
+        .email-box {
+            border-radius: 5px;
+            height: 45px;
+        }
+
+        .comment-box {
+            height: 120px;
+        }
+
+        .send {
+            padding: 10px 40px;
+            background: linear-gradient(90deg, #138DBD, #1B2F5C);
+            border: none;
+        }
+
+        .send:hover {
+            background: linear-gradient(90deg, #1B2F5C, #138DBD);
+            color: white;
+
+        }
+
+        .Cancel {
+            padding: 10px 40px;
+            background: linear-gradient(90deg, #ffffff, #d7d8d8);
+            border: none;
+        }
+
+        .Cancel:hover {
+            background: linear-gradient(90deg, #d7d8d8 #ffffff);
+            color: gray;
+        }
+
+        /*----------- CORE VALUE---------- */
+        .core-value-card img {
+            width: 124%;
+            height: 165px;
+            object-fit: cover;
+
+        }
+
+        .core-value-card {
+            text-align: center;
+            color: white;
+        }
+
+        .core-value-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        /* -------BLOGS------ */
+
+        .blog-section {
+            padding: 40px 0;
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            border: none;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #0e65a0, #00113E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .our-blog {
+            background: linear-gradient(90deg, #0A5181, #00113E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .btn-read {
+            background: linear-gradient(90deg, #0A5181, #00113E);
+            color: white;
+            padding: 6px 110px;
+            font-weight: 500;
+            margin-top: 10px;
+            align-self: start;
+        }
+
+        .btn-read:hover {
+            color: white;
+        }
+
+        .btn-show-more {
+            display: block;
+            margin: 30px auto 0;
+            background: linear-gradient(90deg, #0A5181, #00113E);
+            color: white;
+            padding: 10px 30px;
+            font-weight: 500;
+            border: none;
+        }
+
+        .btn-show-more:hover {
+            color: white;
+
+
+        }
+    </style>
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">
+                    <img src="imgs/hussain 2.png" alt="Logo" style="height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="Index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About
+                                Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="aboutpage.html">About Us</a></li>
+                                <li><a class="dropdown-item" href="Services.html">Our Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="Stories.html">Stories</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Carrier</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Carrier.html">Carrier</a></li>
+                                <li><a class="dropdown-item" href="Jobs.html">Jobs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Insights.html">Insights</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="Blogs.html">Blogs</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Support</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Contact.html">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="Franchises.html">Franchises</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section>
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- IMAGE first on mobile -->
+                    <div class="col-lg-5 order-1 order-lg-2 text-center mt-4 pt-3">
+                        <img src="imgs/Group 1000001017.png" alt="Hero Image" class="img-fluid">
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="col-lg-7 order-2 order-lg-1 hero-text text-center text-lg-start">
+                        <h2>Experience Blazing-<br>Fast 4G Connectivity</h2>
+                        <p>Enjoy ultra-speed 4G for instant connectivity and smooth performance for <br> seamless
+                            browsing,
+                            streaming, and downloads. Stay connected effortlessly with speed and reliability.</p>
+                        <button class="btn-readmore">Read More</button>
+
+                        <!-- STATS -->
+                        <div class="row stats-box mt-4">
+                            <div class="col-md-4">
+                                <div class="cardS py-4 px-3">
+                                    <h5>16+ Products</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3 mt-md-0">
+                                <div class="cardS py-4 px-3">
+                                    <h5>90K+ Users</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3 mt-md-0">
+                                <div class="cardS py-4 px-3">
+                                    <h5>30+ Franchises</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- AHMED COMMUNICATION -->
+
+    <div class="Ahmed">
+        <div class="container about-section">
+            <h2 class="section-heading">About Ahmed Communication</h2>
+
+            <!-- History and Introduction -->
+            <div class="row about-box align-items-center  about-section-card">
+                <!-- Image first on small screens -->
+                <div class="col-md-4 text-center order-1 order-md-2">
+                    <img src="imgs/history.png" alt="" class="about-img">
+                </div>
+                <div class="col-md-8 order-2 order-md-1">
+                    <h4 class="about-title">History and Introduction</h4>
+                    <p class="about-content">
+                        Ahmed Communications (Pvt) Ltd. (ACPL) is a leading telecommunication Franchise of
+                        Gilgit-Baltistan
+                        represents Special Communications Organization (SCO) providing innovative and state of the art
+                        communication services in Gilgit-Baltistan. We are a brand synonymous in superior customer care
+                        and
+                        reliability in services. Being part of the Special Communications Organization we aim to empower
+                        our
+                        customers with the choice of their dynamic lifestyle in the digital world. We work to offer
+                        value
+                        for money with a diversified product portfolio...
+                    </p>
+                    <div class="text-center text-md-start">
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aim & Objectives -->
+            <div class="row about-box align-items-center about-section-card">
+                <!-- Image first on small screens -->
+                <div class="col-md-4 text-center order-1 order-md-1">
+                    <img src="imgs/aims.png" alt="Aim" class="about-img">
+                </div>
+                <div class="col-md-8 order-2 order-md-2">
+                    <h4 class="about-title about-title-2">Aim & Objectives</h4>
+                    <p class="about-content">
+                        In the support of our parent company we aim to increase profitability and maximize our market
+                        share
+                        through increasing out of customer base, increase potential customers, diversify our product
+                        range,
+                        services quality for the development of a satisfied customer base, expanding a sustainable and
+                        happy
+                        consumer society in the market. We are to connect people through developing a dynamic digital
+                        culture where data flows at speed, providing digital lifestyle options that have been never
+                        before.
+                    </p>
+                    <div class="text-center text-md-start">
+                        <a href="#" class="btn btn-read-more btn-read-more-2">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  BOARD OF DIRACTORS -->
+    <div class="container py-5">
+        <h1 class="text-center mb-4 text-gradient">Board of Directors</h1>
+
+        <div class="carousel-wrapper">
+
+            <!-- Card 1 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card1">
+                <img src="imgs/fateh ullah.png" class="card-img-top" alt="Profile">
+                <div class="card-body">
+                    <h6 class="fw-bold text-gradient">Mr. Arif Manan</h6>
+                    <small class="text-muted d-block mb-2">Founder</small>
+                    <p class="card-text small">Ahmed Communications (Pvt) Ltd. (ACPL) operates across Gilgit - Baltistan
+                        mainly in two major zones including Gilgit and Ghizer districts...</p>
+                    <a href="#" class="btn btn-custom w-100">Read More →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- OUR VISION -->
+    <div class="vision-section">
+        <section class=" container text-center">
+            <h2>Our Vision is Our Mission</h2>
+            <p class="mb-4">
+                Our vision is to be recognized as a leader and brand synonymous with trust, highest standards of service
+                quality, internationally best practicing socially responsible organization in the development of a
+                digital society by creating a better every day.
+            </p>
+            <p class="mb-5">
+                Creating a distinctive brand loyalty by providing highest standards of service to customers using best
+                international marketing tools and management practices. Assuming responsibilities to become the best
+                corporate citizen we strive. We are optimists about that technology and connectivity can augment the
+                future and improve people’s lives. Through our business we aim to build a digital society that could
+                enhance socio economic progress. To enrich our customers lives through the unique power of mobile and
+                data communication and reduce the digital skill gaps especially in youth. We seek
+            </p>
+            <div class="row g-3">
+                <div class="col-sm-6 col-md-4">
+                    <div class="vision-card">
+                        <img src="imgs/FLAWLESS.png" alt="Image 1">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="vision-card">
+                        <img src="imgs/PERSONILIZATION.png" alt="Image 2" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="vision-card">
+                        <img src="imgs/GOODVALUE.png" alt=" Image 3" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="vision-card">
+                        <img src="imgs/CONNECT PEOPLE.png" alt="Image 4" />
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="vision-card">
+                        <img src="imgs/DIGITAL SOLUTION.png" alt="Image 5" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CORE VALUE -->
+    <div class="core-value-section ">
+        <div class="container  my-4">
+            <h2 class="text-center fw-bold " style="
+         background: linear-gradient(90deg, #3b88be, #023258);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;">Core Values</h2>
+            <p class="text-center">
+                In essence, our company values are the beliefs, philosophies and principles that drive our business. Our
+                company values are our company DNA and they help in differentiating our business from the competition.
+                Our
+                core values are our heart beat that support our every decision which shape our company culture and
+                impacts
+                our business strategies. They help us creating purpose and we truly honor our values:
+            </p>
+            <div class="row text-center mt-4">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/reponsible.png" alt="Responsible">
+                        <!-- <div class="core-value-caption">Responsible</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/team.png" alt="Team Work">
+                        <!-- <div class="core-value-caption">Team Work</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/integrity.png" alt="Integrity">
+                        <!-- <div class="core-value-caption">Integrity</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/passion.png" alt="Passion">
+                        <!-- <div class="core-value-caption">Passion</div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/excellence.png" alt="Excellence in service">
+                        <!-- <div class="core-value-caption">Excellence in service</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/honesty.png" alt="Honesty is the best policy">
+                        <!-- <div class="core-value-caption">Honesty is the best policy</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/trust.png" alt="Trustworthiness">
+                        <!-- <div class="core-value-caption">Trustworthiness</div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="core-value-card">
+                        <img src="imgs/accountability 1.png" alt="Accountability">
+                        <!-- <div class="core-value-caption">Accountability</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOGS--->
+    <div class="container blog-section">
+        <h2 class="our-blog">Our Blogs </h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/sco.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">About SCO</h5>
+                        <p class="card-text">We are a public sector organization working under the Ministry of IT &
+                            Telecom, Government of Pakistan. Special Communications Organization (SCO) was established
+                            in 1976 to develop, operate and maintain all telecom services in Azad Jammu & Kashmir and
+                            Gilgit Baltistan..</p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/management.png" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Management Structure</h5>
+                        <p class="card-text">Ahmed Communications (Pvt) Ltd. (ACPL) has a well-defined simple and
+                            vibrating governance system. It is governed by a 10-member “Board of Directors (BoD). Six
+                            permanent members who are also the directors of the company, involves in the strategic
+                            management and directions...</p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/customer.png" class="card-img-top" alt="Customer Care">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Care</h5>
+                        <p class="card-text">Our purpose is to connect for a better future and our expertise give us a
+                            unique opportunity to drive for a positive change in the society. Our network keeps family,
+                            friends, businesses and government connected. As the Covid-19 pandemic period witnessed ...
+                        </p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/markiting.png" class="card-img-top" alt="Marketing Program">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing Program</h5>
+                        <p class="card-text">Creating value starts with doing the right things. Bridging the Gap between
+                            the right ideas and correctly executing them is our marketing philosophy. We adopted our
+                            marketing activity; as a set of value creating, communicating, delivering, and exchange
+                            offerings for...</p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/streghtnt.png" class="card-img-top" alt="Strength">
+                    <div class="card-body">
+                        <h5 class="card-title">Strength</h5>
+                        <p class="card-text">Our distribution platform is shadowed by our marketing program. We believe
+                            in making product availability and care about a systematic channel of distribution which is
+                            a very crucial decision to the success of any product or company operating in a market. It
+                            can be many types...</p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100">
+                    <img src="imgs/forward.png" class="card-img-top" alt="Way Forward">
+                    <div class="card-body">
+                        <h5 class="card-title">Way Forward</h5>
+                        <p class="card-text">It gives me a great pleasure to express that I address to the people who
+                            are not only the air time consumers but are more concerned about the quality service and
+                            expecting the added from the service providers. There were the days when even an important
+                            news usually took a long ...</p>
+                        <a href="#" class="btn btn-read-more">Read More ➜</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-show-more">Show More ➜</button>
+    </div>
+
+
+    <!-- FEEDBACKS -->
+    <div class="feedback">
+        <div class="container feedback-box">
+            <h1 class="text-center fw-bold mb-4 heading">Feedback</h1>
+            <div class="row">
+
+                <!-- Left Feedback Form -->
+                <div class="col-md-6 mb-4 give-feedback">
+                    <h5>Give feedback</h5>
+                    <label class="form-label mt-2">What do you think of Ahmed communication</label>
+                    <input type="email" class="form-control email-box mb-3" placeholder="Enter your email address">
+
+                    <div class="mb-3">
+                        <span class="star checked">&#9733;</span>
+                        <span class="star checked">&#9733;</span>
+                        <span class="star checked">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+
+                    <label class="form-label">Do you have any thoughts you'd like share?</label>
+                    <textarea class="form-control comment-box mb-3"></textarea>
+
+                    <p>May we follow you up on your feedback?</p>
+                    <div class="row g-4">
+                        <button class="btn  me-4 col-md-4 send">Send</button>
+                        <button class="btn   col-md-4 Cancel">Cancel</button>
+                    </div>
+                </div>
+
+                <!-- Right Feedback Messages -->
+                <div class="col-md-6 feedback-card">
+                    <!-- Feedback Card -->
+                    <div class="border p-3 mb-3 rounded">
+                        <p>I appreciate how the communication was direct and easy to understand. There was no
+                            unnecessary
+                            jargon, and the message was conveyed effectively.</p>
+                        <img src="imgs/emogi.png" alt="">
+                    </div>
+                    <!-- Repeat card (you can duplicate this as needed) -->
+                    <div class="border p-3 mb-3 rounded">
+                        <p>I appreciate how the communication was direct and easy to understand. There was no
+                            unnecessary
+                            jargon, and the message was conveyed effectively.</p>
+                        <img src="imgs/emogi.png" alt="">
+                    </div>
+                    <div class="border p-3 mb-3 rounded">
+                        <p>I appreciate how the communication was direct and easy to understand. There was no
+                            unnecessary
+                            jargon, and the message was conveyed effectively.</p>
+                        <img src="imgs/emogi.png" alt="">
+                    </div>
+
+                    <div class="border p-3 mb-3 rounded">
+                        <p>I appreciate how the communication was direct and easy to understand. There was no
+                            unnecessary
+                            jargon, and the message was conveyed effectively.</p>
+                        <img src="imgs/emogi.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer style="background: linear-gradient(90deg, #0A5181, #00113E);" class="text-white py-5">
+        <div class="container">
+            <div class="row text-start">
+                <!-- Logo Section -->
+                <div class="col-12 col-md-3 mb-4 text-center text-md-start">
+                    <img src="imgs/footer 1.png" alt="Ahmed Communications Logo" class="mb-2" style="width: 123px;">
+                </div>
+
+                <!-- Company -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Company</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Stories</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Carrier</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Our Services</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">SPaisa</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SCOM</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Sphone</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SNet</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SCO WLL</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">LDI</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">DPLC & Colocator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Help</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div class="col-12 col-md-3">
+                    <h6 class="text-uppercase fw-bold fs-6">Contacts</h6>
+                    <ul class="list-unstyled small">
+                        <li><i class="bi bi-telephone "></i>+92 5811 451999, 458544</li>
+                        <li><i class="bi bi-printer "></i>+92 5811 450999</li>
+                        <li><i class="bi bi-envelope "></i>ahmadcommunicationpakistan@gmail.com</li>
+                        <li><i class="bi bi-globe "></i>www.ahmadcommunication.com.pk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

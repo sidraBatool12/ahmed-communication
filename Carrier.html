@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hero Section</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: large;
+        }
+
+        /* BACKGROUND IMAGES */
+        .hero-section {
+            background-image: url(imgs/Vector.png), url(imgs/vector1.png);
+            background-position: left, right;
+            background-repeat: no-repeat, no-repeat;
+            background-size: contain;
+            padding-bottom: 100px;
+        }
+
+        /* NAVBAR SECTION */
+        .navbar-custom {
+            background-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 18px 0 20px;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 9px;
+            color:#023a67;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #051f36 !important;
+        }
+
+        /* DROPDOWNS */
+        .dropdown-menu {
+            background-color: #0b4784;
+            border: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: white;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #023061;
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 60px;
+        }
+
+        .hero-text h2 {
+            font-size: 50px;
+            font-weight: 699;
+            line-height: 65.7px;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #3b88be, #023a67);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.04rem;
+            color: #333;
+            letter-spacing: 1.3px;
+            margin-top: 1.2rem;
+            line-height: 29px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            margin-top: 10%;
+        }
+
+        /* READMORE BUTTON */
+        .btn-readmore {
+            background: linear-gradient(90deg, #0a4f93, rgb(1, 2, 44));
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 25px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-readmore:hover {
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            color: white;
+        }
+
+        /* HOVER EFFECT */
+        .stats-box .card:hover {
+            color: white;
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            -webkit-text-fill-color: white;
+        }
+
+        /* HOVER OPEN DROPDOWN ON DESKTOP */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+
+        /* BACKGROUND HIDE ON SMALL */
+        @media (max-width: 1226px) {
+            .hero-section {
+                background-image: none;
+            }
+        }
+
+        /* RESPONSIVE TWEAKS FOR SMALL SCREENS */
+        @media (max-width: 991.98px) {
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 30px;
+                line-height: 40px;
+                letter-spacing: 1px;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+                line-height: 24px;
+                letter-spacing: 0.5px;
+            }
+
+            .navbar-nav .nav-link {
+                color: #0d457a !important;
+            }
+
+            .hero-img {
+                margin-bottom: 30px;
+            }
+        }
+
+
+
+        /*---------------------- MESSAGE----------- -----------------*/
+
+    .main {
+      background-color: #ebebeb;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .section-header {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 600;
+      background: linear-gradient(90deg, #306b92, #043271);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 20px 0;
+    }
+
+    .name-box {
+      background: linear-gradient(90deg, #255d83, #06153f);
+      color: white;
+      font-size: 28px;
+      font-weight: 600;
+      padding: 8px;
+      letter-spacing: 3px ;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .subtitle {
+      font-size: 32px;
+      background: linear-gradient(90deg, #166091, #06153f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+      text-align: center;
+      margin: 40px 0;
+      line-height: 45px;
+    }
+
+    .message-box {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .message-img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      height: auto;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+
+    .message-text {
+      flex: 2 1 500px;
+      padding: 20px;
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+      .message-box {
+        flex-direction: column;
+      }
+
+      .message-img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+      }
+    }
+
+    /* AWARD CSS */
+
+    body {
+      background-color: #f9f9fb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* BEST AWARD */
+    .best-award{
+      background: linear-gradient(to right, #138DBD, #1B2F5C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+
+    .top-title{
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+    }
+    .card {
+
+      overflow: hidden;
+    }
+    .card img {
+      object-fit:cover;
+      height: 200px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .card-text {
+      font-size: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    h4 {
+      padding-top: 10px;
+      font-size: 13px;
+      color: #444;
+    }
+    /* LETTER */
+    .section-title {
+    background: linear-gradient(90deg, #3393cf, #053e56);
+    color: white;
+    font-size: 30px;
+    /* font-weight: bold; */
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 40px 20px;
+}
+.LETTER{
+    width: 100%;
+}
+
+/* BEST FRANSHISHEE */
+.best{
+    background-color: rgb(241, 240, 240);
+    padding-bottom: 60px;
+}
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-box {
+      flex: 1;
+      max-width: 30%;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.1);
+      border: #124981 2PX solid;
+    }
+
+    @media (max-width: 992px) {
+  .image-box {
+    max-width: 45%;
+  }
+
+  .image-box img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-box {
+    max-width: 90%;
+  }
+
+  .image-box img {
+    height: 180px;
+  }
+
+  .dot-controls button {
+    width: 10px;
+    height: 10px;
+    margin: 4px;
+  }
+}
+
+
+    .dot-controls {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot-controls button {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: none;
+      margin: 5px;
+      background-color: #ddd; /* light greyish default */
+      transition: background-color 0.9s ease;
+    }
+
+    .dot-controls button.active-hover {
+      background-color: #124981 !important; /* dark navy blue */
+    }
+
+    </style>
+</head>
+
+<body>
+        <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div>
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="container">
+                    <!-- LOGO -->
+                    <a class="navbar-brand text-white" href="#">
+                        <img src="imgs/hussain 2.png" alt="Logo" style="height: 40px;">
+                    </a>
+                    <!-- DROPDOWN BUTTON 1 -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <!-- NAVLINKS -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link " href="Index.html">Home</a></li>
+
+                            <!-- DROPDOWN 1 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">About Us</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="aboutpage.html">About Us</a></li>
+                                    <li><a class="dropdown-item" href="Services.html">Our Services</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a class="nav-link" href="Stories.html">Stories</a></li>
+
+                            <!-- DROPDOWN 2 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">Carrier</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="Carrier.html">Carrier</a></li>
+                                    <li><a class="dropdown-item" href="Jobs.html">Jobs</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a class="nav-link text-white" href="Insights.html">Insights</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="Blogs.html">Blogs</a></li>
+
+                            <!-- DROPDOWN 3 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                    data-bs-toggle="dropdown">Support</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item " href="Contact.html">Contact Us</a></li>
+                                    <li><a class="dropdown-item " href="Franchises.html">Franchises</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- HERO SECTION -->
+            <section>
+                <div class="container">
+                    <div class="row align-items-center hero flex-column-reverse flex-lg-row text-center text-lg-start">
+                        <!-- HERO TEXT -->
+                        <div class="col-lg-7 hero-text">
+                            <h2>Unleash the Power of <br> Connectivity with Ahmed <br> Communication</h2>
+                            <p>Securely pay for Ahmed Communications' services online via card, <br> JazzCash, Easypaisa, or bank transfer.</p>
+                            <button class="btn-readmore">Read More</button>
+                        </div>
+
+                        <!-- HERO IMAGE -->
+                        <div class="col-lg-5 hero-img mt-3 mt-lg-1">
+                            <img src="imgs/carrier.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <!-- MESSAGE -->
+    <div class="main">
+        <div class="container py-4">
+      
+          <!-- Top Heading -->
+          <div class="section-header">Message</div>
+      
+          <!-- Name -->
+          <div class="name-box">
+            Mr. Fateh Ullah Khan
+          </div>
+      
+          <!-- Subtitle -->
+          <div class="subtitle">
+            Minister for Planning & Development and Information<br>Government of Gilgit-Baltistan
+          </div>
+      
+          <!-- Single Message Box -->
+          <div class="message-box mb-4">
+            <img src="imgs/fateh ullah.png" alt="Fateh Ullah Khan" class="message-img">
+            <div class="message-text">
+              It gives me a great pleasure to express that I address to the people who are not only the air time consumers but are more concerned about the quality service and expecting the added from the service providers. There were the days when even an important news usually took a long time to spread in the region where we live, but I am very thankful to Special Communications Organization (SCO) for minimizing distances in our lives. It is also important to note what has not changed at communication; it is SCO’s commitment in providing exceptional service. The year 2020 marked major turning point for our society. Along with the heightening of uncertainties brought about by COVID-19, people’s life style and work style, as well as medical, educational, and other social systems as a whole underwent major changes. Through these changes, we have experienced the great power and value of digital technologies. These digitally stimulated social changes are most likely to continue from now onward. I would like to see Ahmed Communications (Pvt) Ltd. (ACPL) stand at the center and be the driver of such dynamic changes. Finally, I am very optimistic that Ahmed Communications (Pvt.) Ltd. (ACPL) will prove itself to be a true enterprise enthusiast and play the role model to the youth of Gilgit-Baltistan so that together we would be able to continue progress.
+            </div>
+          </div>
+      
+      
+             <!-- Name -->
+             <div class="name-box mb-4  ">
+              History of Awards & Recognition
+            </div>
+        
+           <!-- Single Message Box -->
+           <div class="message-box mb-4">
+            <img src="imgs/historyof awasr.png" alt="Fateh Ullah Khan" class="message-img">
+            <div class="message-text">
+              From the day first we have always been  excited about working with SCO and we  also tried our level best to prove  ourselves as a business enthusiast to the  level of expectations our parent  company set for us.  We have always been judged for the  recognitions and awards which are  honor to us and we assure our utmost  professionalism to merit the honor and  awards given to us.  We wake up every day committed to support our customer and business communities  with the aim to deliver new value, as we strongly believe that our customer base is our  real brand. There are many awards for which we have been considered; but there are  some, we cannot back down. Especially the following ones: • Best Franchise award by Sector Commander SCO, Col. Imran Bhatti for the year  2015-2016  • Top Telecom Service Provider Franchise award by the Director General SCO Mr. Mohammad Khalid Rao. • Best Franchise Award by the Sector Commander SCO Mr. Bilal Khwaja for the year  2013. • Best Franchise Award by the Sector Commander SCO Mr. Tahir Hussain for the year  2011-12. • A letter of appreciation for the best sales and distribution by the Director Marketing,  Brigadier Rtd. Mr. Muhammad Munir for the year 2011-12
+            </div>
+          </div>
+      
+        </div>
+        </div>
+        <!-- AWARDS -->
+        <div class="container my-5">
+            <div class="top-title  d-flex flex-wrap g-4">
+            <!-- Top Title -->
+            <h4 class="text-center mb-2 col-lg-4 me-5">
+              Best Franchise award by Sector Commander <br> SCO, Col. Imran Bhatt for the year 2015–2016
+            </h4>
+            <h2 class="text-centermb-5 best-award fw-bold ms-5">Best Awards</h2>
+            </div>
+        
+            <!-- Awards Cards -->
+            <div class="row justify-content-center g-4 p-4">
+              <!-- Card 1 -->
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <img src="imgs/award1.png" class="card-img-top" alt="Award 1">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Top Telecom Service Provider Franchise award by the Director General SCO Mr.Mohammad Khalid .
+                    </p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Card 2 -->
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <img src="imgs/award2.png" class="card-img-top" alt="Award 2">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Top Telecom Service Provider Franchise award by the Director General SCO Mr. Mohammad Khalid Rao.
+                    </p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Card 3 -->
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <img src="imgs/award3.png" class="card-img-top" alt="Award 3">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Best Franchise Award by the Sector Commander SCO Mr. Bilal Khwaja for the year  2013
+                    </p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Card 4 -->
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <img src="imgs/award4.png" class="card-img-top" alt="Award 4">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Best Franchise Award by the Sector Commander SCO Mr. Tahir Hussain for the year  2011-12
+                    </p>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- CARD 5 -->
+              <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="card shadow-sm border-0">
+                  <img src="imgs/award5.png" class="card-img-top" alt="Award 4">
+                  <div class="card-body">
+                    <p class="card-text">
+                      A letter of appreciation for the best sales and distribution by the Director Marketing, Brigadier Retd. Mr. Muhammad Munir for the year 2011–12.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LETTER -->
+          <div class="container my-5">
+            <div class="section-title fs-3 fw-bold"> Latter of Appreciation</div>
+            <img class="LETTER" src="imgs/letter.png" alt="">
+          
+          </div>
+
+          <!-- best franchisee -->
+          <div class="  best ">
+            <div class="container">
+          <div class="section-title fs-3 fw-bold">Best Franchisee Award</div>
+          <div class=" mt-5">
+            <!-- Image Row -->
+            <div class="image-row">
+              <div class="image-box"><img src="imgs/award4.png" alt="img1" data-index="0"></div>
+              <div class="image-box"><img src="imgs/award2.png" alt="img2" data-index="1"></div>
+              <div class="image-box"><img src="imgs/award1.png" alt="img3" data-index="2"></div>
+            </div>
+          
+            <!-- Dots -->
+            <div class="dot-controls">
+              <button class="dot" data-index="0"></button>
+              <button class="dot" data-index="1"></button>
+              <button class="dot" data-index="2"></button>
+            </div>
+          </div>
+          </div>    
+        </div>
+          
+          <script>
+            const images = document.querySelectorAll('.image-box img');
+            const dots = document.querySelectorAll('.dot-controls button');
+          
+            images.forEach(img => {
+              img.addEventListener('mouseenter', () => {
+                const index = img.getAttribute('data-index');
+                dots.forEach(dot => dot.classList.remove('active-hover'));
+                const targetDot = document.querySelector(`.dot-controls button[data-index="${index}"]`);
+                if (targetDot) targetDot.classList.add('active-hover');
+              });
+          
+              img.addEventListener('mouseleave', () => {
+                dots.forEach(dot => dot.classList.remove('active-hover'));
+              });
+            });
+          </script>
+
+        <!-- FOOTER -->
+        <footer style="background: linear-gradient(90deg, #0A5181, #00113E);" class="text-white py-5">
+            <div class="container">
+                <div class="row text-start">
+                    <!-- Logo Section -->
+                    <div class="col-12 col-md-3 mb-4 text-center text-md-start">
+                        <img src="imgs/footer 1.png" alt="Ahmed Communications Logo" class="mb-2" style="width: 123px;">
+                    </div>
+          
+                    <!-- Company -->
+                    <div class="col-6 col-md-2 mb-4">
+                        <h6 class="text-uppercase fw-bold fs-6">Company</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Stories</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Carrier</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Insights</a></li>
+                        </ul>
+                    </div>
+          
+                    <!-- Services -->
+                    <div class="col-6 col-md-2 mb-4">
+                        <h6 class="text-uppercase fw-bold fs-6">Our Services</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#" class="text-white text-decoration-none">SPaisa</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">SCOM</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Sphone</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">SNet</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">SCO WLL</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">LDI</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">DPLC & Colocator</a></li>
+                        </ul>
+                    </div>
+          
+                    <!-- Help -->
+                    <div class="col-6 col-md-2 mb-4">
+                        <h6 class="text-uppercase fw-bold fs-6">Help</h6>
+                        <ul class="list-unstyled small">
+                            <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+          
+                    <!-- Contacts -->
+                    <div class="col-12 col-md-3">
+                        <h6 class="text-uppercase fw-bold fs-6">Contacts</h6>
+                        <ul class="list-unstyled small">
+                            <li><i class="bi bi-telephone "></i>+92 5811 451999, 458544</li>
+                            <li><i class="bi bi-printer "></i>+92 5811 450999</li>
+                            <li><i class="bi bi-envelope"></i>ahmadcommunicationpakistan@gmail.com</li>
+                            <li><i class="bi bi-globe "></i>www.ahmadcommunication.com.pk</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

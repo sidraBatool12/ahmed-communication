@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hero Section</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: large;
+        }
+
+        /* BACKGROUND IMAGES */
+        .hero-section {
+            background-image: url(imgs/Vector.png), url(imgs/vector1.png);
+            background-position: left, right;
+            background-repeat: no-repeat, no-repeat;
+            background-size: contain;
+            padding-bottom: 110px;
+        }
+
+        /* NAVBAR SECTION */
+        .navbar-custom {
+            background-color: transparent;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 18px 0 20px;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 9px;
+            color: #0d457a;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #051f36 !important;
+        }
+
+        /* DROPDOWNS */
+        .dropdown-menu {
+            background-color: #0b4784;
+            border: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: white;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #023061;
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero-text h2 {
+            font-size: 50px;
+            font-weight: 699;
+            line-height: 65.7px;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #3b88be, #023a67);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            margin-top: 60px;
+        }
+
+        .hero-text p {
+            font-size: 1.04rem;
+            color: #333;
+            letter-spacing: 1.3px;
+            margin-top: 1.2rem;
+            line-height: 29px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: auto;
+            margin-top: 10%;
+        }
+
+        /* READMORE BUTTON */
+        .btn-readmore {
+            background: linear-gradient(90deg, #0a4f93, rgb(1, 2, 44));
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 25px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-readmore:hover {
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            color: white;
+        }
+
+        /* HOVER EFFECT */
+        .stats-box .card:hover {
+            color: white;
+            background: linear-gradient(90deg, rgb(1, 2, 44), #0a4f93);
+            -webkit-text-fill-color: white;
+        }
+
+        /* HOVER OPEN DROPDOWN ON DESKTOP */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            .hero-img .img {
+                display: none;
+            }
+        }
+
+        /* BACKGROUND HIDE & NAV COLOR FIX FOR SMALL DEVICES */
+        @media (max-width: 1226px) {
+            .hero-section {
+                background-image: none;
+            }
+
+            .nav-link {
+                color: #0d457a !important;
+            }
+
+            .navbar-nav .nav-link.text-white {
+                color: #0d457a !important;
+            }
+        }
+
+        /* RESPONSIVE HEADING */
+        @media (max-width: 768px) {
+            .hero-text h2 {
+                font-size: 32px;
+                line-height: 45px;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+                line-height: 25px;
+            }
+        }
+    .main{
+        background-color: rgb(244, 243, 243);
+        padding: 20px;
+    }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            
+        }
+
+        .section-title {
+            background: linear-gradient(90deg, #3393cf, #053e56);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .about-card {
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .about-img-placeholder {
+            width: 100%;
+            height: 70%;
+             background-color: rgb(228, 228, 228);
+            border-radius: 6px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        @media (min-width: 768px) {
+            .about-img-placeholder {
+                height: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-section">
+        <div>
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="container">
+                    <!-- LOGO -->
+                    <a class="navbar-brand text-white" href="#">
+                        <img src="imgs/hussain 2.png " alt="Logo" style="height: 40px;">
+                    </a>
+                    <!-- DROPDOWN BUTTON -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <!-- NAVLINKS -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="Index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">About Us</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="aboutpage.html">Aabout Us</a></li>
+                                    <li><a class="dropdown-item" href="Services.html">our Services</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="Stories.html">Stories</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">Carrier</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="Carrier.html">Carrier</a></li>
+                                    <li><a class="dropdown-item" href="Jobs.html">Jobs</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-white" href="Insightshtml">Insights</a></li>
+                            <li class="nav-item"><a class="nav-link text-white" href="Blogs.html">Blogs</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown">Support</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="Contact.html">Contact Us</a></li>
+                                    <li><a class="dropdown-item" href="Franchises.html">Franchises</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- HERO SECTION -->
+            <section>
+                <div class="container">
+                    <div class="row align-items-center hero flex-column-reverse flex-lg-row">
+                        <!-- HERO TEXT -->
+                        <div class="col-lg-7 hero-text text-center text-lg-start mt-4 mt-lg-0">
+                            <h2>Where creativity Meet <br>Communication</h2>
+                            <p>At Ahmed Communications, we bridge the gap between <br> imagination and impact. We don’t
+                                just design visuals—we <br> build visual strategies that speak volumes</p>
+                            <button class="btn-readmore">Read More</button>
+                        </div>
+
+                        <!-- HERO IMAGE -->
+                        <div class="col-lg-5 hero-img text-center">
+                            <img src="imgs/service.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+        <div class="main">
+    <div class="about-container">
+        <!-- ABOUT AHMED COMMUNICATION -->
+        <div class="section-title">About Ahmed Communication</div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        Ahmed Communications (Pvt.) Ltd. (ACPL) is a leading telecommunication Franchise of
+                        Gilgit-Baltistan represents Special Communications Organization (SCO) providing innovative and
+                        state of the art communication services in Gilgit-Baltistan. We are a brand synonymous to
+                        superior customer care and reliability in services. Being part of the Special Communications
+                        Organization we aim to empower our customers with the choice of dynamic lifestyle in the GB
+                        region. We work to offer value for money with a diversified product portfolio; PSTN, VDSL, DSL,
+                        GSM, DXX, LL and Tripple Play TV App®. We are offering products ranging from advance data tools
+                        to high speed Internet. Our Tripple Play Service (TPS®) is a tremendous addition in our offering
+                        Ahmed Communication (Pvt.) Ltd. (ACPL) is one of the largest and oldest telecom service
+                        providers franchise that have been operating in almost all the districts of Gilgit-Baltistan in
+                        past two decades in association with SCOM (SCO). Being the first franchise company in GB, Ahmed
+                        Communication (Pvt.) Ltd. was selected by “SCO” on priority due to our high performance for
+                        customers & innovative approach towards our products and services. We lead the race, we defined
+                        the market, we motivated high spirits in the youth of our hands. Eventually a small enterprise
+                        reshaped its existence and became a private limited company.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-12">
+                    <p class="about-text">
+                        Guided by our values rooted in us, we strive to shape a better future continuing the legacy of
+                        our founder Late Mr. Arif Mannan who designed ACPL 15 years ago. Our services are available to
+                        individuals, corporate entities and governments as well. We have diversified our business
+                        portfolio and today we are a major lead player in the market. With further aim to offer ultimate
+                        experience with highest customer care at the most affordable price with dedication to offer an
+                        affordable price. In today’s competitive business environment, ACPL has emerged as one of the
+                        ultimate personalized voice and data service provider in the region, for a modern commercial
+                        society. Today we are a progressive, efficient, and excellent focused institution. Our long term
+                        value creation model is based on the balanced combination of financial profitability,
+                        environmental protection and social responsibility. We offer the best service on the basis of
+                        customer choice and our standing, distinctively with our parent organization “The SCO” whose
+                        purpose is to unlock the power of communication to enhance quality of life for everyone, today
+                        and for generations to come.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT SCO -->
+        <div class="section-title">About SCO</div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        Ahmed Communications (Pvt.) Ltd. (ACPL) is a leading telecommunication Franchise of
+                        Gilgit-Baltistan represents Special Communications Organization (SCO) providing innovative and
+                        state of the art communication services in Gilgit-Baltistan. We are a brand synonymous to
+                        superior customer care and reliability in services. Being part of the Special Communications
+                        Organization we aim to empower our customers with the choice of dynamic lifestyle in the GB
+                        region. We work to offer value for money with a diversified product portfolio; PSTN, VDSL, DSL,
+                        GSM, DXX, LL and Tripple Play TV App®. We are offering products ranging from advance data tools
+                        to high speed Internet. Our Tripple Play Service (TPS®) is a tremendous addition in our offering
+                        Ahmed Communication (Pvt.) Ltd. (ACPL) is one of the largest and oldest telecom service
+                        providers franchise that have been operating in almost all the districts of Gilgit-Baltistan in
+                        past two decades in association with SCOM (SCO). Being the first franchise company in GB, Ahmed
+                        Communication (Pvt.) Ltd. was selected by “SCO” on priority due to our high performance for
+                        customers & innovative approach towards our products and services. We lead the race, we defined
+                        the market, we motivated high spirits in the youth of our hands. Eventually a small enterprise
+                        reshaped its existence and became a private limited company.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-12">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- our aims and objectives -->
+        <div class="section-title">Our aims and objectives </div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        In the support of our parent company we aim to increase profitability and maximize our market
+                        share through increasing clout of customer base, increase potential customers, diversify our
+                        product range, services quality for the development of a satisfied customer base, expanding a
+                        sustainable and happy consumer society in the market. We are to connect people through
+                        developing a dynamic digital culture where data f lows at speed, providing digital lifestyle
+                        options that have been never before.
+                        Our vision is to be recognized as a leader and brand synonymous with trust, highest standards of
+                        service quality, internationally best practicing socially responsible organization in the
+                        development of a digital society by creating a better every day.
+
+                        Creating a distinctive brand loyalty by providing highest standards of service to customers
+                        using best international marketing tools and management practices. Assuming responsibilities to
+                        become the best corporate citizen where we operate. We are optimistic about that technology and
+                        connectivity can augment the future and improve people’s lives. Through our business we aim to
+                        build a digital society that could enhance socio economic progress. To enrich our customer's
+                        lives through the unique power of mobile and data communication and reduce the digital skill
+                        gaps especially in youth.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOUNDER -->
+
+        <div class="section-title">Founder, Mr. Arif Manan </div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        Once the founder of Ahmed Communications (Pvt) Ltd. (ACPL) Late, Mr. Arif Manan expressed, as I
+                        am not a well-educated man but I can write a history with my passion that would be the way of
+                        people who believe that opportunity is not born itself rather, it is to pull from the hole of
+                        risks with courage and patience. ACPL is approaching its 15th year. Today where we stand; is the
+                        vision of a person who always believed and was saying “your work is going to fill a large part
+                        of your life, and the only way to be truly satisfied is to do what you believe is great work.
+                        And the only way to do great work is to love what you do”. These words are the driving tools of
+                        our company that Late Mr. Arif Manan used to say. Mr. Arif Manan was a person who loved to set
+                        new trends in the business especially, in the horizon of entrepreneurship, he always encouraged
+                        the people who have the spark of doing something, he used to make people understand that success
+                        is not only the money rather it is making something happen. He always believed in change, he
+                        used to say a special mindset cannot bring a notable change. He always gave new meanings to
+                        business risks and ventures, one of his daring statements is “I THINK and ACT as if I am ALREADY
+                        SUCCESSFUL”. Continuing the legacy of our founder, we are hopefully in the pursuit of a bright
+                        future. We must thank him for the company we are today.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CO-FOUNDER -->
+        <div class="section-title">Co-Founder, Mr. Abid Manan</div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        Late, Mr. Abid Manan was an associate co-founder of the company. He assumed the responsibilities
+                        of ensuring the consistency in company’s vision and making sure that it is unique and attractive
+                        to potential customers, also he concentrated on creating value for customers through expansion
+                        of sales outlets and customer service initiatives. He believed that the outcome is more
+                        important than the process, that’s why we found him always rushing to get more of whatever he
+                        focused on. He was more than a decisive man, proactive and always believes in smart
+                        presentation. He always said “I am trying my best to run the company otherwise the company will
+                        be running me and that day will be a super bad one for all of us. “We must know when not to
+                        decide” was his famous phrase while discussing business, particularly the marketing strategies.
+                        He made us learnt to create a pull in the sales rather than pushing it through investing more
+                        resources.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CEO -->
+        <div class="section-title">(CEO) Mr.Muhammad Umar Manani</div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>      
+                        <div class="row pt-4">
+                            <div class="col-12">
+                                <p class="about-text">
+                                    Our vision is to maintain and consolidate SCO’s status as the leading Information
+                                    and Communication Technology (ICT) services provider for the people of Azad Jammu &
+                                    Kashmir and Gilgit-Baltistan, and play a leading role in realizing Government vision
+                                    and Our mission is to Plan, Develop, Operate and Maintain contemporary ICT services
+                                    in Azad Jammu & Kashmir and Gilgit-Baltistan and any other areas assigned it by the
+                                    Government of Pakistan. While playing a pivotal role in implementation of ICT
+                                    projects under China-Pakistan Economic Corridor CPEC.
+                                </p>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- BOARD OF DIRECTORS -->
+                <div class="section-title">Board of Directors</div>
+                <div class="about-card">
+                        <div class="col-md-12 ">
+                            <p class="about-text text-center">
+                                Ahmed Communications (Pvt) Ltd. (ACPL) has a well-defined simple and vibrating  governance system. It is governed by a 10-member “Board of Directors (BoD). Six  permanent members who are also the directors of the company, involves in the  strategic management and directions to the organization at policy level, whereas,  the CEO and Director operations are responsible for guidance to the management  and staff at operational level and facilitates improved coordination amongst the  various departments and also responsible for managing the day to day operations  of the organization
+                            </p>
+                        </div>
+                    </div>
+    
+
+
+        <!-- DIRECTOR OPERATION -->
+        <div class="section-title">(Director Operations) Mr. Gufran</div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+                            <div class="col-12">
+                                <p class="about-text">
+                                    Our vision is to maintain and consolidate SCO’s status as the leading Information
+                                    and Communication Technology (ICT) services provider for the people of Azad Jammu &
+                                    Kashmir and Gilgit-Baltistan, and play a leading role in realizing Government vision
+                                    and Our mission is to Plan, Develop, Operate and Maintain contemporary ICT services
+                                    in Azad Jammu & Kashmir and Gilgit-Baltistan and any other areas assigned it by the
+                                    Government of Pakistan. While playing a pivotal role in implementation of ICT
+                                    projects under China-Pakistan Economic Corridor CPEC.
+                                </p>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+              
+
+
+        <!-- DIRECTORS -->
+
+
+        <div class="section-title">Directors </div>
+
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-card mt-3">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-card mt-3">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-card mt-3">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-card mt-3">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom, Government of
+                        Pakistan. Special Communications Organization (SCO) was established in 1976 to develop, operate
+                        and maintain all telecom services in Azad Jammu & Kashmir and Gilgit Baltistan. Over the years,
+                        SCO has developed massive Information Technology & Telecom infrastructure including laying of
+                        over 4800 kilometers Optical Fiber Cable network across the entire length and breadth of the
+                        region. SCO stands tall as the largest telecom network & service provider in the region equally
+                        focusing on urban and rural areas development. We are providing telecom & IT services to both
+                        public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit Baltistan. It
+                        has a unique distinction of providing all brands of telecom services from voice to data under
+                        one platform. successfully implementing CPEC project. The services we provide to our valued
+                        customers include landline telephony (PSTN), wireless local loop (WLL), cellular mobile service
+                        (GSM), broadband internet (DSL), digital cross connect (DXX), long distance international (LDI),
+                        domestic private leased circuits (DPLC) and co-location facilities to telecom industry players
+                        operating in Azad Jammu & Kashmir and Gilgit Baltistan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+            <!-- manager -->
+        <div class="section-title">Manager</div>
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        We are a public sector organization working under the Ministry of IT & Telecom,  Government of Pakistan. Special Communications Organization (SCO) was established  in 1976 to develop, operate and maintain all telecom services in Azad Jammu &  Kashmir and Gilgit Baltistan. Over the years, SCO has developed massive Information  Technology & Telecom infrastructure including laying of over 4800 kilometers Optical  Fiber Cable network across the entire length and breadth of the region. SCO stands tall  as the largest telecom network & service provider in the region equally focusing on  urban and rural areas development. We are providing telecom & IT services to both  public and private sectors (general populous) in Azad Jammu & Kashmir and Gilgit  Baltistan. It has a unique distinction of providing all brands of telecom services from  voice to data under one platform. successfully implementing CPEC project. The services we provide to our valued customers include landline telephony (PSTN),  wireless local loop (WLL), cellular mobile service (GSM), broadband internet (DSL),  digital cross connect (DXX), long distance international (LDI), domestic private leased  circuits (DPLC) and co-location facilities to telecom industry players operating in Azad  Jammu & Kashmir and Gilgit Baltistan. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="section-title">About Customer Care</div>
+        <div class="about-card">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-img-placeholder"><img src="" alt=""></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="about-text">
+                        Our purpose is to connect for a better future and our expertise give us a unique  opportunity to drive for a positive change in the society. Our network keeps family,  friends, businesses and government connected. As the Covid-19 pandemic period  witnessed we played a vital role in keeping economic activities on the run and in  function. Our customer care professionals are giving special devotions to some of our  critical sectors like education and healthcare. To facilitate, getting always in touch and resolving customer problems round the clock  we established a customer care cell in our main office. Our customer care people are  dedicatedly providing assistance to customers and solving all sorts of business and  technical problems and providing guidelines related to service and information about  our product line. Our customer service is a valuable asset to our customer and the company as well. It  plays a vital role in customer retention and in development of customer trust and  loyalty with us. As companies are interested not just in a single and rare interaction  with a customer but, with many and frequent interactions may guarantee in creating  loyalty with the company's product that our professionally trained and skilled team has  learnt. To include customer service in our value chain; we identify our customer’s needs, assess  our employee’s skills, we then design and implement a training vehicle that is in  constant review of its quality so that we could meet and surpass the needs and  expectations of customer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT OUR STRENGHT -->
+
+        <div class="section-title">About Our Strength</div>
+
+        <div class="about-card m-4">
+                <div class="col-md-12 ">
+                    <h3>Our People</h3>
+                    <p class="about-text">
+                        We at Ahmed Communications (Pvt) Ltd. (ACPL) put people first. As our people  are our true source of growth and success. We are committed to maintain a  workplace where all employees have the opportunity to maximize their  performance as a team. Our corporate events, like success celebrations, new  year, CSR activities etc. distinguish us as a great place to work. These events  provide our people the opportunity to stay tuned with the company's Goals,  become familiar with our success stories, and remain connected by getting to  know each other. We also maintain some financial and professionally benefiting  schemes to our employees that include salary advance, employee’s training,  annual bonuses, health and life insurance covers are our permanent offerings.
+                    </p>
+                </div>
+            </div>
+            <!-- OUR STRONG FOUNDATION -->
+            <div class="about-card m-4">
+                <div class="col-md-12">
+                    <h3>Our Strong Foundation</h3>
+                    <p class="about-text">
+                        Our deep regional strength across the region is our customer loyalty. We are the  leading full-service communication service provider franchise to businesses and  residential customers across Gilgit. Our 15 years’ experience in the market place  has built our credibility as the region's most responsive and dynamic  organization. Our state of the art distribution channels and richest bundling  capabilities among its competitors made us a superlative franchise company with  a reliable infrastructural support of our parent organization “The SCO”
+                    </p>
+                </div>
+            </div>
+            <!-- OUR CREDIBILITY -->
+            <div class="about-card m-4">
+                <div class="col-md-12">
+                    <h3> Our Credibility</h3>
+                    <p class="about-text fs-">
+                        Beside customer trust in us, we enjoy a reputation of a great place to work with  us. Being a leading socially-responsible corporate citizen we are trusted,  respected and considered to be the credible organization by the governmental  agencies, banks and other financial institutions and the non-profit organizations  as well.
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 d-flex flex-wrap ">
+            <!-- OUR RELIABLE TECHICAL SUPPORT -->
+            <div class="about-card col-10 col-lg-6 mb-4  ">
+                <div >
+                    <h3>  Our Reliable Technical Support</h3>
+                    <p class="about-text">
+                        B Our Eagle eyed, skilled, mountain friendly and well trained SCO staff is always on  the rock fixed poles and under the earth fiber lines putting life blood in the  information and communication technology and system.
+                    </p>
+                </div>
+            </div>
+            <!-- our large market share -->
+            <div class="about-card col-10 col-lg-5 ms-4 mb-4 ">
+                <div>
+                    <h3> Our Large Market Share</h3>
+                    <p class="about-text ">
+                        We at Ahmed Communications (Pvt) Ltd. (ACPL) feel pride to offer the biggest  digital communication network of Special Communication Organization to our  customers. In return we enjoy the highest chunk of market share in the financial  terms.
+                    </p>
+                </div>
+            </div>
+            </div>
+                <!--  Our Leadership in Product Innovation -->
+            <div class="about-card m-4">
+                <div class="col-md-12">
+                    <h3>    Our Leadership in Product Innovation</h3>
+                    <p class="about-text">
+                        Few years ago our services were limited to telephony, WWL, and PST (Landline)  but today we are offering a full range of communication services through  cutting-edge fiber optic technology, high performing cable equipment  augmenting the satellite footprint. We are now offering a “Smart TV app” on  very nominal cost to our consumer.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer style="background: linear-gradient(90deg, #0A5181, #00113E);" class="text-white py-5">
+        <div class="container">
+            <div class="row text-start">
+                <!-- Logo Section -->
+                <div class="col-12 col-md-3 mb-4 text-center text-md-start">
+                    <img src="imgs/footer 1.png" alt="Ahmed Communications Logo" class="mb-2" style="width: 123px;">
+                </div>
+
+                <!-- Company -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Company</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Stories</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Carrier</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Our Services</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">SPaisa</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SCOM</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Sphone</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SNet</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">SCO WLL</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">LDI</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">DPLC & Colocator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div class="col-6 col-md-2 mb-4">
+                    <h6 class="text-uppercase fw-bold fs-6">Help</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white text-decoration-none">Customer Support</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div class="col-12 col-md-3">
+                    <h6 class="text-uppercase fw-bold fs-6">Contacts</h6>
+                    <ul class="list-unstyled small">
+                        <li><i class="bi bi-telephone "></i>+92 5811 451999, 458544</li>
+                        <li><i class="bi bi-printer"></i>+92 5811 450999</li>
+                        <li><i class="bi bi-envelope"></i>ahmadcommunicationpakistan@gmail.com</li>
+                        <li><i class="bi bi-globe "></i>www.ahmadcommunication.com.pk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
